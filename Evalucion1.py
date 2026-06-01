@@ -1,12 +1,5 @@
 def calcular_objetivo_ml(peso_kg, nivel_actividad):
-    """
-    Calcula el objetivo diario de consumo de agua en mililitros.
-    Base: 35 ml por kg de peso.
-    Ajustes por actividad:
-    - bajo: -10%
-    - medio: sin ajuste
-    - alto: +10%
-    """
+   
     base = 35 * peso_kg
     if nivel_actividad == "bajo":
         objetivo = base * 0.9
@@ -15,13 +8,11 @@ def calcular_objetivo_ml(peso_kg, nivel_actividad):
     elif nivel_actividad == "alto":
         objetivo = base * 1.1
     else:
-        raise ValueError("Nivel de actividad inválido")
+        raise ValueError("El nivel de actividad no es <válido")
     return objetivo
 
 def estado_hidratacion(consumo_ml, objetivo_ml):
-    """
-    Devuelve el estado de hidratación comparando consumo con objetivo.
-    """
+  
     if consumo_ml < objetivo_ml:
         porcentaje = ((objetivo_ml - consumo_ml) / objetivo_ml) * 100
         return f"Te falta un {porcentaje:.1f}% para llegar"
@@ -31,7 +22,6 @@ def estado_hidratacion(consumo_ml, objetivo_ml):
         porcentaje = ((consumo_ml - objetivo_ml) / objetivo_ml) * 100
         return f"Has excedido tu objetivo en {porcentaje:.1f}%"
 
-# Programa principal
 personas = []
 
 while True:
