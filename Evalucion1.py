@@ -52,7 +52,7 @@ while True:
         print(f"El objetivo diario de consumo de agua es: {objetivo:.0f} ml")
         print(f"El estado de hidratación es: {estado}")
 
-        continuar = input("¿Desea agregar otra persona? (s/n): ").lower()
+        continuar = input("¿Quieres agregar otra persona? (s/n): ").lower()
         if continuar != 's':
             break
 
